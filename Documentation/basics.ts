@@ -41,3 +41,62 @@
 
 
 
+// function padRight(padding:number | string, input: string):string{
+//     if(typeof padding === "number"){
+//         //error is occuring here while converting into js
+//         return " ".repeat(padding) + input
+//     }
+//     return padding+input;
+// }
+// console.log(padRight(2, "Hello"));
+
+
+
+//random
+// let str :string[]
+// str = ["Rajan"]
+// console.log(typeof str);
+
+
+
+// function printAll(str: string | string[] | null){
+//     if(str && typeof str==="object"){
+//         for(const s of str){
+//             console.log(s);
+//         }
+//     }
+//     else if (typeof str ==="string"){
+//         console.log(str);
+//     }
+// }
+// printAll(["Rajan", "Raj", "Acharya"])
+
+
+
+//-----------in Operator-----------
+// type Person = {
+//     name:string,
+//     age:number
+// }
+// function showDetails(per: Person){
+//     if("name" in per){
+//         console.log(per.name);
+//     }
+// }
+// const person1 : Person = {name:"Ram", age:21}
+// showDetails(person1)
+
+
+
+//-----------in operator in documentation example-------
+type Bird = {fly:()=>void}
+type Fish = {swim:()=>void}
+function move(animal: Bird | Fish){
+    ("swim" in animal)? animal.swim():animal.fly() 
+}
+const animal : Bird = {
+    fly :():void=>{
+        console.log("Fly");
+    }
+}
+move(animal)

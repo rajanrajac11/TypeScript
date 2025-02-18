@@ -4,7 +4,12 @@
 // }
 // // greetWithDate("Rajan", Date()) is not correct because Date() returns string but our function is accepting object of type date
 // greetWithDate("Rajan", new Date());
-function displayPoint(pt) {
-    console.log("x = ".concat(pt.x, ", y = ").concat(pt.y));
+function move(animal) {
+    ("swim" in animal) ? animal.swim() : animal.fly();
 }
-displayPoint({ x: 2, y: 3 });
+var animal = {
+    fly: function () {
+        console.log("Fly");
+    }
+};
+move(animal);
